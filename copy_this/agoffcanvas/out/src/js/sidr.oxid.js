@@ -24,12 +24,16 @@ $(function(){
     $("#mainnav .navbar-toggle").click(function(){
         sidr.css('left','0px');
         !sidr.hasClass('initialized') && loadSidrContent();
+        $('body').click(function(ev){
+            if( sidr.position().left == 0 && ($(ev.target).is('.sidr-close') || $(ev.target).parents('.sidr').length == 0) ){
+                sidr.css("left", "-"+sidr.width()+"px");
+                return false;
+            }            
+        });
         return false;
     });
     
-    $('body, .sidr-close').click(function(){
-        sidr.css("left", "-"+sidr.width()+"px");
-    });
+
     
     //on link click, fetch content if flag set
     $('#sidr-offcanvas').on('click', '.sidr-ajax-link', function(){

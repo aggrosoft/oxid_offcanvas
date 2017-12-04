@@ -22,7 +22,7 @@ class agoffcanvas_oxcategorylist extends agoffcanvas_oxcategorylist_parent {
         $sFieldList = $this->_getSqlSelectFieldsForTree($sViewName);
         
         $sOrdDir = 'asc';
-        $sOrder = "oxrootid $sOrdDir, oxleft $sOrdDir";
+        $sOrder = "oxsort $sOrdDir, oxrootid $sOrdDir, oxleft $sOrdDir";
         $sSql =  "select $sFieldList from $sViewName where $sViewName.oxparentid = ".oxDb::getDb()->quote($sActCat)." order by $sOrder";
         $aParentData = oxDb::getDb(oxDb::FETCH_MODE_ASSOC)->getAll($sSql);
         

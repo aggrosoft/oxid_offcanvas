@@ -1,5 +1,6 @@
 # Oxid Off-Canvas
-Oxid eSales Off-Canvas Menu, uses the css files from the great sidr project as a base.
+Oxid eSales Off-Canvas Menu, now uses bootstrap 4 classes. 
+Non wave based themes (bootstrap 3) are not supported anymore.
 
 MIT License
 

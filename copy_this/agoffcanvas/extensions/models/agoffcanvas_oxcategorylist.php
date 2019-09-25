@@ -25,11 +25,15 @@ class agoffcanvas_oxcategorylist extends agoffcanvas_oxcategorylist_parent {
         $sOrder = "oxsort $sOrdDir, oxrootid $sOrdDir, oxleft $sOrdDir";
         $sSql =  "select $sFieldList from $sViewName where $sViewName.oxparentid = ".oxDb::getDb()->quote($sActCat)." order by $sOrder";
         $aParentData = oxDb::getDb(oxDb::FETCH_MODE_ASSOC)->getAll($sSql);
-        
-        $aParentKeys = array_map(function($item){ return oxDb::getDb()->quote($item['oxid']); },$aParentData);
-        $sSql =  "select $sFieldList from $sViewName where $sViewName.oxparentid IN(". implode(",", $aParentKeys).") order by $sOrder";
-        $aChildData = oxDb::getDb(oxDb::FETCH_MODE_ASSOC)->getAll($sSql);
-        $aData = array_merge($aParentData, $aChildData);
+
+        if (count($aParentData)){
+            $aParentKeys = array_map(function($item){ return oxDb::getDb()->quote($item['oxid']); },$aParentData);
+            $sSql =  "select $sFieldList from $sViewName where $sViewName.oxparentid IN(". implode(",", $aParentKeys).") order by $sOrder";
+            $aChildData = oxDb::getDb(oxDb::FETCH_MODE_ASSOC)->getAll($sSql);
+            $aData = array_merge($aParentData, $aChildData);
+        }else{
+            $aData = $aParentData;
+        }
 
         $this->assignArray($aData);
         

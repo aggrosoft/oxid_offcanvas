@@ -21,7 +21,7 @@ $(function(){
     }
 
     //init on toggle click, stop default event
-    $("#mainnav .navbar-toggler").click(function(){
+    $(".navbar-toggler").click(function(){
         offcanvas.addClass('open');
         !offcanvas.hasClass('initialized') && loadOffCanvasContent();
         $('body').click(function(ev){

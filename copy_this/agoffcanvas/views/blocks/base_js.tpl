@@ -1,6 +1,6 @@
 [{$smarty.block.parent}]
 [{capture assign=pageScript}]
-    var OFFCANVAS_BASE_URL = "[{$oViewConf->getSelfLink()|cat:"cl=agoffcanvaslist"}]";
+    var OFFCANVAS_BASE_URL = "[{$oViewConf->getSelfLink()|html_entity_decode|cat:"cl=agoffcanvaslist"}]";
     var OFFCANVAS_CURRENT_CNID = "[{if $actCategory}][{$actCategory->getId()}][{/if}]";
     var OFFCANVAS_STYLE = ""
 [{/capture}]

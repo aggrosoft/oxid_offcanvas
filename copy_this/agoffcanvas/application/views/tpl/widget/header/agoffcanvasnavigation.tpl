@@ -5,8 +5,10 @@
         </a>
     [{/if}]
     [{foreach from=$oCategories item=cat}]
+        [{if $cat->getIsVisible()}]
         <a href="[{$cat->getLink()}]" data-cnid="[{$cat->getId()}]" class="list-group-item list-group-item-action  d-flex justify-content-between align-items-center [{if $cat->getSubCats()}]offcanvas-ajax-link[{/if}]">
             [{$cat->oxcategories__oxtitle->value}] [{if $cat->getSubCats()}]<i class="fa fa-angle-right pull-right"></i>[{/if}]
         </a>
+        [{/if}]
     [{/foreach}]
 </div>

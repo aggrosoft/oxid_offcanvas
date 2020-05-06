@@ -1,7 +1,7 @@
 <div class="navbar">
     <a class="navbar-brand" href="[{$oViewConf->getHomeLink()}]" title="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]">
         [{assign var="slogoImg" value=$oViewConf->getViewThemeParam('sLogoFile')}]
-        <img src="[{$oViewConf->getImageUrl($slogoImg)}]" alt="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]">
+        <img class="img-fluid" src="[{$oViewConf->getImageUrl($slogoImg)}]" alt="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]">
     </a>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">

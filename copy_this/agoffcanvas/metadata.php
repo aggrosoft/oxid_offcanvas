@@ -1,10 +1,13 @@
 <?php
+
+$sMetadataVersion = '1.1';
+
 $aModule = array(
     'id'           => 'agoffcanvas',
     'title'        => 'Aggrosoft Off-Canvas Menü',
     'description'  => 'Ersetzt die mobile Navigation mit einem Off-Canvas Seitenmenü',
     'thumbnail'    => '',
-    'version'      => '2.0.2',
+    'version'      => '2.0.3',
     'author'       => 'Aggrosoft',
     'extend'      => array(
         'oxcategorylist' => 'agoffcanvas/extensions/models/agoffcanvas_oxcategorylist'        

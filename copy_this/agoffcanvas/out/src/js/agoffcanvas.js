@@ -23,7 +23,7 @@ $(function(){
     //init on toggle click, stop default event
     $(".navbar-toggler").click(function(){
         offcanvas.addClass('open');
-        !offcanvas.hasClass('initialized') && loadOffCanvasContent();
+        !offcanvas.hasClass('initialized') && loadOffCanvasContent(OFFCANVAS_CURRENT_CNID);
         $('body').click(function(ev){
             if( offcanvas.hasClass('open') && !$(ev.target).is('#offcanvas-menu') && $(ev.target).parents('#offcanvas-menu').length == 0 ){
                 offcanvas.removeClass('open');

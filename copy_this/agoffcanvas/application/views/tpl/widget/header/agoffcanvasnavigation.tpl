@@ -3,6 +3,9 @@
         <a href="[{$oActCat->getLink()}]" data-cnid="[{$oActCat->oxcategories__oxparentid->value}]" class="list-group-item list-group-item-action active offcanvas-ajax-link offcanvas-parent-link">
             <i class="fas fa-angle-left"></i> [{$oActCat->oxcategories__oxtitle->value}]
         </a>
+        <a href="[{$oActCat->getLink()}]" data-cnid="[{$oActCat->oxcategories__oxparentid->value}]" class="list-group-item list-group-item-action offcanvas-current-link">
+            [{oxmultilang ident="OFFCANVAS_SHOW_ALL"}]
+        </a>
     [{/if}]
     [{foreach from=$oCategories item=cat}]
         [{if $cat->getIsVisible()}]

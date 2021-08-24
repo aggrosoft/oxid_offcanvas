@@ -22,7 +22,7 @@ $(function(){
     }
 
     //init on toggle click, stop default event
-    $(".navbar-toggler").click(function(){
+    $(".navbar-toggler, [data-navbar-toggler]").click(function(){
         $('body').append(backdrop);
         offcanvas.addClass('open');
         backdrop.addClass('show');
